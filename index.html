@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="PugsLife">
+  <head>
+    <meta charset="utf-8">
+    <title>Angular Practice</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  </head>
+  <body ng-controller="PugController" class="container">
+
+    <input
+      class="form-control"
+      ng-model="chatMessage"
+      placeholder="Say what you need to say..."/>
+
+    <button
+      class="btn btn-default"
+      ng-click="addMessage(chatMessage)">
+      Add a message
+    </button>
+
+    <div ng-repeat="gif in gifs">
+      <img ng-src="{{gif.images.downsized_medium.url}}" />
+    </div>
+    <br/>
+    <img src="https://media.giphy.com/media/74v4r30Pow956/giphy.gif"
+         ng-show="noResults"/>
+
+    <script src="app.js" charset="utf-8"></script>
+    <script src="getdata.js" charset="utf-8"></script>
+  </body>
+</html>
